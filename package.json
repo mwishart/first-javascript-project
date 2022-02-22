@@ -5,16 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server --port=3000"
+    "start": "http-server --port 3000"
   },
   "author": "John Paxton <pax@speedingplanet.com>",
   "license": "ISC",
   "dependencies": {
+    "http-server": "^14.1.0",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.9.0",
-    "live-server": "^1.2.1",
     "prettier": "^2.5.1"
   }
 }
