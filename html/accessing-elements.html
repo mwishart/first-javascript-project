@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accessing Elements</title>
+  <style>
+    /* Tag selector */
+    p { color: blue }
+
+    /* Class selector */
+    .fontRed { color: red }
+
+    /* ID selector */
+    #someItem { color: green }
+
+    /* Attribute selector */
+    [align=left] { color: orange }
+
+    /* Combined selectors */
+    p.headline { font-size: larger; }
+    div[align=right] { margin-right: 20px }
+    #mainContainer.highlight { background-color: yellow; }
+  </style>
 </head>
+
 <body>
   <header>
     <h1>Accessing Elements</h1>
     <p>Various ways to access elements in the page.</p>
   </header>
+  <section>
+    <ul>
+      <li id="basketball">Raptors</li>
+      <li>Maple Leafs</li>
+      <li>Blue Jays</li>
+      <li>Argonauts</li>
+    </ul>
+  </section>
+
+  <script>
+    let firstListItem = document.getElementById('basketball');
+    let basketballTeam = firstListItem.textContent;
+    // console.log('firstListItem: ', firstListItem);
+    console.log(`Toronto's basketball team is the ${basketballTeam}`);
+
+    let qsFirstListItem = document.querySelector('#basketball');
+    console.log(`Toronto's basketball team via querySelector: ${qsFirstListItem.textContent}`);
+
+  </script>
 </body>
+
 </html>
