@@ -8,21 +8,37 @@
   <title>Accessing Elements</title>
   <style>
     /* Tag selector */
-    p { color: blue }
+    p {
+      color: blue
+    }
 
     /* Class selector */
-    .fontRed { color: red }
+    .fontRed {
+      color: red
+    }
 
     /* ID selector */
-    #someItem { color: green }
+    #someItem {
+      color: green
+    }
 
     /* Attribute selector */
-    [align=left] { color: orange }
+    [align=left] {
+      color: orange
+    }
 
     /* Combined selectors */
-    p.headline { font-size: larger; }
-    div[align=right] { margin-right: 20px }
-    #mainContainer.highlight { background-color: yellow; }
+    p.headline {
+      font-size: larger;
+    }
+
+    div[align=right] {
+      margin-right: 20px
+    }
+
+    #mainContainer.highlight {
+      background-color: yellow;
+    }
   </style>
 </head>
 
@@ -32,11 +48,34 @@
     <p>Various ways to access elements in the page.</p>
   </header>
   <section>
+    <header>
+      <h2>Toronto</h2>
+    </header>
     <ul>
       <li id="basketball">Raptors</li>
       <li>Maple Leafs</li>
       <li>Blue Jays</li>
       <li>Argonauts</li>
+    </ul>
+  </section>
+  <section>
+    <header>
+      <h2>Baltimore</h2>
+    </header>
+    <ul>
+      <li>Orioles</li>
+      <li id="baltimore-football">Colts</li>
+    </ul>
+  </section>
+
+  <section class="london">
+    <header>
+      <h2>London</h2>
+    </header>
+    <ul>
+      <li>Arsenal</li>
+      <li>Hotspur</li>
+      <li>Chelsea</li>
     </ul>
   </section>
 
@@ -48,6 +87,37 @@
 
     let qsFirstListItem = document.querySelector('#basketball');
     console.log(`Toronto's basketball team via querySelector: ${qsFirstListItem.textContent}`);
+
+    let teamsListItems = document.querySelectorAll('li');
+    console.log(`Toronto's football team is the ${teamsListItems[3].textContent}`);
+
+    console.log('Toronto\'s teams are: ');
+    // This gives indexes, not what we want
+    // for (let team in teamsListItems) {
+
+    // This gives values, which is what we want
+    for (let team of teamsListItems) {
+      console.log(team.textContent);
+    }
+
+    // Changing text content
+    let baltimoreFootball = document.querySelector('#baltimore-football');
+    baltimoreFootball.textContent = 'Ravens';
+    console.log(`Baltimore's football team: the ${baltimoreFootball.textContent}`);
+
+    // Select the first unordered list (ul) that is a descendant of something
+    // with the class "london"
+    let londonFootball = document.querySelector('.london ul');
+    londonFootball.insertAdjacentHTML("beforeend", "<li>Crystal Palace</li>");
+
+    // Inserts plain text. Ooops.
+    // londonFootball.append("<li>Crystal Palace</li>");
+
+    // Long way around, but more flexible
+    let nextTeam = document.createElement('li');
+    nextTeam.textContent = 'Watford';
+    // londonFootball.append(nextTeam);
+    londonFootball.insertAdjacentElement("beforeend", nextTeam);
 
   </script>
 </body>
