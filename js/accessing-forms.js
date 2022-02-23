@@ -4,8 +4,10 @@ console.log('Eventually shows form data here.');
 let button = document.querySelector('#get-name-button');
 button.addEventListener('click', function () {
   console.log('You clicked on the button');
+
+  // Get the text content of the form field
+  let input = document.querySelector('#your-name');
+
+  // Log to the console
+  console.log(`Hello, ${input.value}!`);
 });
-
-// Get the text content of the form field
-
-// Log to the console
