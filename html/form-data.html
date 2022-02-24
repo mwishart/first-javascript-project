@@ -18,15 +18,15 @@
     <section>
       <form id="movie-form">
         <div>
-          <label for="title" class="form-label">Title:</label>
+          <label for="movie-title" class="form-label">Movie Title:</label>
           <input type="text" name="title" id="movie-title" class="form-control">
         </div>
         <div>
-          <label for="year" class="form-label">Year:</label>
+          <label for="movie-year" class="form-label">Year:</label>
           <input type="text" name="year" id="movie-year" class="form-control">
         </div>
         <div>
-          <label for="genre" class="form-label">Genre:</label>
+          <label for="movie-genre" class="form-label">Genre:</label>
           <select name="genre" id="movie-genre" class="form-select">
             <option value="action">Action</option>
             <option value="drama">Drama</option>
@@ -38,7 +38,8 @@
       </form>
     </section>
   </main>
-  <script src="form-data.js" type="module"></script>
+  <!-- This script is an ECMAScript Module, sometimes "ESM" -->
+  <script src="../js/form-data.js" type="module"></script>
 </body>
 
 </html>
