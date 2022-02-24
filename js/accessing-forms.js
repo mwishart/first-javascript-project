@@ -1,6 +1,3 @@
-
-
-
 console.log('Eventually shows form data here.');
 
 // Add an event listener for the button
